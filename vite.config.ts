@@ -6,9 +6,9 @@ export default defineConfig({
       emptyOutDir:true,
       lib:{
           formats:['es','cjs','umd'],
-          name:'EventEmitter4',
+          name:'EventPropagation',
           entry:'./lib/index.ts',
-          fileName: (format, entryName) => `eventemitter4.${format}.js`,
+          fileName: (format, entryName) => `event-propagation.${format}.js`,
           
       },
       minify:false,

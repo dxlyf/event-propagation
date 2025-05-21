@@ -198,5 +198,5 @@ EventTarget.prototype.emit=EventTarget.prototype.dispatchEvent
 
 
 export {
-    EventTarget as EventEmitter4
+    EventTarget as EventPropagation
 }

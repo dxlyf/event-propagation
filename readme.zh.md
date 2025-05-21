@@ -2,8 +2,8 @@
 
 
 ```typescript
-    import {EventEmitter4,Event,EventPhase} from 'eventemitter4'
-    class DisplayObject extends EventEmitter4<{
+    import {EventTarget,Event,EventPhase} from 'event-propagation'
+    class DisplayObject extends EventTarget<{
         mousedown:{},
 
     }>{

@@ -346,8 +346,8 @@ export {
   BUBBLING_PHASE,
   CAPTURING_PHASE,
   Event,
-  EventTarget as EventEmitter4,
   EventPhase,
+  EventTarget as EventPropagation,
   EventTarget,
   NONE
 };

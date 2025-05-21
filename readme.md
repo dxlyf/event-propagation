@@ -1,8 +1,8 @@
 This is an event-like event capture and bubbling event triggering mechanism based on eventMitter3 using typescript implemented in HtmlElement
 
 ```typescript
-    import {EventEmitter4,Event,EventPhase} from 'eventemitter4'
-    class DisplayObject extends EventEmitter4<{
+    import {EventTarget,Event,EventPhase} from 'event-propagation'
+    class DisplayObject extends EventTarget<{
         mousedown:{},
 
     }>{

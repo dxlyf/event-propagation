@@ -1,5 +1,5 @@
 (function(global, factory) {
-  typeof exports === "object" && typeof module !== "undefined" ? factory(exports) : typeof define === "function" && define.amd ? define(["exports"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.EventEmitter4 = {}));
+  typeof exports === "object" && typeof module !== "undefined" ? factory(exports) : typeof define === "function" && define.amd ? define(["exports"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, factory(global.EventPropagation = {}));
 })(this, function(exports2) {
   "use strict";var __defProp = Object.defineProperty;
 var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
@@ -349,8 +349,8 @@ var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "sy
   exports2.BUBBLING_PHASE = BUBBLING_PHASE;
   exports2.CAPTURING_PHASE = CAPTURING_PHASE;
   exports2.Event = Event;
-  exports2.EventEmitter4 = EventTarget;
   exports2.EventPhase = EventPhase;
+  exports2.EventPropagation = EventTarget;
   exports2.EventTarget = EventTarget;
   exports2.NONE = NONE;
   Object.defineProperty(exports2, Symbol.toStringTag, { value: "Module" });

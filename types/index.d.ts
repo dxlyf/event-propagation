@@ -58,4 +58,4 @@ export declare class EventTarget<Events extends Record<string, any> = {}> {
     dispatchEvent<K extends Extract<keyof Events, string>>(e: Event<Events[K], K>): boolean;
     removeAllListeners(): void;
 }
-export { EventTarget as EventEmitter4 };
+export { EventTarget as EventPropagation };
