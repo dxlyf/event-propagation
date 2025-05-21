@@ -8,7 +8,13 @@
   "module": "./dist/eventemitter4.es.js",
   "description": "This is an event-like event capture and bubbling event triggering mechanism based on eventMitter3 using typescript implemented in HtmlElement",
   "files": ["./dist","./lib","./types", "package.json","readme.md","readme.zh.md"],
-  "homepage": "https://github.com/zhaoqingqing/eventemitter4",
+  "author": {
+    "name": "dxyl"
+  },
+  "repository": {
+    "url": "https://github.com/dxlyf/eventemitter4",
+    "type": "git"
+  },
   "scripts": {
     "dev": "vite --port=5896",
     "build": "tsc && vite build",
