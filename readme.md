@@ -21,9 +21,11 @@ This is based on eventmitter3, which implements event message subscriptions simi
     target2.parentNode=target1
     target3.parentNode=target2
 
+    //e.target==target1,e.currentTarget===target3
     // print 1,2,3
     target1.on('mousedown',e=>{
-        consolog.og('1')
+        console.log(e.eventPhase)
+        consolog.og('1',e.target==target1,e.currentTarget===target3)
     },{capture:true})
 
     target2.on('mousedown',e=>{
@@ -33,7 +35,7 @@ This is based on eventmitter3, which implements event message subscriptions simi
     target3.on('mousedown',e=>{
             consolog.og('2')
     })
-    target3.emit(e) // Trigger event or target3.dispatchEvent(e) // Trigger event
+    target3.emit(e.setData()) // Trigger event or target3.dispatchEvent(e) // Trigger event
 
 
 
@@ -93,6 +95,7 @@ This is based on eventmitter3, which implements event message subscriptions simi
         mousedown:{},
 
     }>{
+        type='container'
         children=[]
         add(child: DisplayObject) {
             child.parentNode=this
@@ -120,6 +123,7 @@ This is based on eventmitter3, which implements event message subscriptions simi
         capture:true, // Capture phase triggers
     })
     child.on('mousedown',e=>{
+        console.log('type',e.currentTarget.type)
         e.stopImmediatePropagation() // Prevents triggering of peer and parent events
         e.stopPropagation() // Prevent the triggering of parent events
         console.log('child mouseDown',e.eventPhase)
