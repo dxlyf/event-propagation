@@ -1,0 +1,27 @@
+{
+  "name": "eventemitter4",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "types": "./types/index.d.ts",
+  "main": "./dist/eventemitter4.umd.js",
+  "module": "./dist/eventemitter4.es.js",
+  "description": "This is an event-like event capture and bubbling event triggering mechanism based on eventMitter3 using typescript implemented in HtmlElement",
+  "files": ["./dist","./lib","./types", "package.json","readme.md","readme.zh.md"],
+  "homepage": "https://github.com/zhaoqingqing/eventemitter4",
+  "scripts": {
+    "dev": "vite --port=5896",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "rollup-plugin-dts": "^6.2.1",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4"
+  },
+  "dependencies": {
+    "eventemitter3": "^5.0.1"
+  }
+}
