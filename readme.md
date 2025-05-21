@@ -1,6 +1,8 @@
 这基于eventmitter3，它实现了类似于DOM事件的事件消息订阅，可以冒泡和捕获传播
 
-
+This is based on eventmitter3, which implements event message subscriptions similar to DOM events that can bubble and capture propagation
+﻿
+﻿
 ```typescript
     import {EventTarget,Event,EventPhase} from 'event-propagation'
 
