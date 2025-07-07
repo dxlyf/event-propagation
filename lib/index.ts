@@ -21,8 +21,8 @@ export const AT_TARGET = EventPhase.AT_TARGET;
 export const BUBBLING_PHASE = EventPhase.BUBBLING_PHASE;
 
 export class Event<T=any,E extends Extract<keyof Record<string,any>,string>=''> {
-    static create(type:string, bubbles?:boolean, cancelable?:boolean){
-        return new this(type, bubbles, cancelable)
+    static create<T=any,E extends Extract<keyof Record<string,any>,string>=''>(type:E, bubbles?:boolean, cancelable?:boolean){
+        return new this<T,E>(type, bubbles, cancelable)
     }
     type:E = 'none' as E
     parentNode = null
@@ -102,13 +102,13 @@ function getEmitterListenerEvents(emitter:any,evt:string) {
 export interface EventTarget<Events extends Record<string,any>={}>{
     on<K extends keyof Events>(type:K, fn:EventCallback<Events[K]>, options?:EventOptions|boolean):void
     off<K extends keyof Events>(type:K, fn:EventCallback<Events[K]>, options?:EventOptions|boolean):void
-    emit<K extends keyof Events>(e:Event['type'] extends K?Events[K]:Event) :void
+    emit<K extends Extract<keyof Events, string>>(e:Event<Events[K],K>):void
 
 }
 export class EventTarget<Events extends Record<string,any>={}>  {
      parentNode:EventTarget|null=null
-    _bubble_emitter = new EventEmitter()
-    _capture_emitter = new EventEmitter()
+    private _bubble_emitter = new EventEmitter()
+    private _capture_emitter = new EventEmitter()
 
     addEventListener<K extends keyof Events>(type:K, fn:EventCallback<Events[K]>, options?:EventOptions|boolean) {
         options = getOptions(options) as EventOptions
@@ -200,3 +200,4 @@ EventTarget.prototype.emit=EventTarget.prototype.dispatchEvent
 export {
     EventTarget as EventPropagation
 }
+

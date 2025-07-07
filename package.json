@@ -1,6 +1,6 @@
 {
   "name": "event-propagation",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "type": "module",
   "types": "./types/index.d.ts",
   "main": "./dist/event-propagation.umd.js",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "dev": "vite --port=5896",
-    "build": "tsc && vite build",
+    "build": "tsc -p tsconfig.json && vite build",
     "preview": "vite preview",
     "test": "vitest",
     "publish": "npm publish"

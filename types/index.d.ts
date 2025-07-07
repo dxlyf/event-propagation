@@ -43,7 +43,7 @@ export declare class Event<T = any, E extends Extract<keyof Record<string, any>,
 export interface EventTarget<Events extends Record<string, any> = {}> {
     on<K extends keyof Events>(type: K, fn: EventCallback<Events[K]>, options?: EventOptions | boolean): void;
     off<K extends keyof Events>(type: K, fn: EventCallback<Events[K]>, options?: EventOptions | boolean): void;
-    emit<K extends keyof Events>(e: Event['type'] extends K ? Events[K] : Event): void;
+    emit<K extends Extract<keyof Events, string>>(e: Event<Events[K], K>): boolean;
 }
 export declare class EventTarget<Events extends Record<string, any> = {}> {
     parentNode: EventTarget | null;
