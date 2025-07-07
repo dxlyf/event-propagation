@@ -16,7 +16,7 @@ export declare const CAPTURING_PHASE: 1;
 export declare const AT_TARGET: 2;
 export declare const BUBBLING_PHASE: 3;
 export declare class Event<T = any, E extends Extract<keyof Record<string, any>, string> = ''> {
-    static create(type: string, bubbles?: boolean, cancelable?: boolean): Event<any, string>;
+    static create<T = any, E extends Extract<keyof Record<string, any>, string> = ''> (type: E, bubbles?: boolean, cancelable?: boolean): Event<T, E>;
     type: E;
     parentNode: any;
     target: EventTarget | null;
@@ -47,8 +47,8 @@ export interface EventTarget<Events extends Record<string, any> = {}> {
 }
 export declare class EventTarget<Events extends Record<string, any> = {}> {
     parentNode: EventTarget | null;
-    _bubble_emitter: EventEmitter<string | symbol, any>;
-    _capture_emitter: EventEmitter<string | symbol, any>;
+    private _bubble_emitter: EventEmitter<string | symbol, any>;
+    private _capture_emitter: EventEmitter<string | symbol, any>;
     addEventListener<K extends keyof Events>(type: K, fn: EventCallback<Events[K]>, options?: EventOptions | boolean): void;
     removeEventListener<K extends keyof Events>(type: K, fn: EventCallback<Events[K]>, options?: EventOptions | boolean): void;
     /**
